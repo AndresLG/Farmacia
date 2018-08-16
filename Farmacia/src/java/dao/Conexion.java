@@ -9,9 +9,9 @@ import lombok.Data;
 @Data
 public class Conexion {
 
-    public static Connection cn;
+    public  Connection cn;
 
-    public static Connection conectar() throws Exception {
+    public void Conectar() throws Exception {
         InputStream inputstream =
                 Conexion.class.getClassLoader().getResourceAsStream("propiedades/properties.properties");
         Properties properties = new Properties();
@@ -26,10 +26,10 @@ public class Conexion {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return cn;
+//        return cn;
     }
 
-    public static void desconectar() throws Exception {
+    public void Desconectar() throws Exception {
         try {
             if (cn != null) {
                     cn.close();
